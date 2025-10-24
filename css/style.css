@@ -132,6 +132,7 @@ ul li:hover {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 /* Carrousels côte à côte */
@@ -155,6 +156,27 @@ ul li:hover {
   display: block;
   border-radius: 15px;
 }
+
+/*----------------SECTION FOOTER -----------------------*/
+footer {
+  text-align: center;      /* centre tout le contenu texte et icônes */
+  padding: 6px 0;         /* un peu d’espace vertical */
+  background: rgba(0, 0, 0, 0.436); /* optionnel : fond semi-transparent */
+  color: #fff;            /* couleur du texte */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.08em;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;     
+  gap: 10px;               
+}
+
 
 /* Responsive : empilement sur mobile */
 @media (max-width: 900px) {
