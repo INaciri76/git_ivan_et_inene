@@ -20,7 +20,7 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
   margin-bottom: 60px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #220a0a;
+  border-bottom: 3px solid #746262;
   display: inline-block;
   padding-bottom: 10px;
   position: relative;
@@ -38,6 +38,7 @@ section h2 {
   border-left: 5px solid #06d6a0;
   padding-left: 15px;
   text-transform: uppercase;
+  font-weight: initial;
 }
 
 /* Structure des sections */
@@ -75,8 +76,9 @@ ul li {
   padding: 10px 25px;
   border-radius: 30px;
   font-weight: 500;
-  color: #ffd166;
+  color: #ffffff;
   transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 ul li:hover {
@@ -85,76 +87,103 @@ ul li:hover {
   cursor: pointer;
 }
 
-/* SECTION "Projets réalisés" */
-section:last-child {
-  text-align: center; /* centre tous les textes de la section */
-}
+/* ----------SECTION "Projets réalisés" ------------*/
 
-/* Titre H2 centré */
-section:last-child h2 {
-  text-align: center;
-  border-left: none;
-  padding-left: 0;
-  display: inline-block;
-  margin-bottom: 25px;
-  padding-left: 15px;
-  border-left: 5px solid #06d6a0;
-}
-
-/* Centrage du texte */
-section:last-child p,
-section:last-child small {
-  text-align: center;
-  margin: 10px auto 20px;
-  max-width: 800px;
-}
-
-/* Galerie : Flexbox pour carrousels côte à côte */
+/* Conteneur de la section projets */
 .project-gallery {
-  display: flex;
-  justify-content: center; /* centre horizontalement */
-  align-items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap; /* passe en colonne sur petit écran */
-  width: 100%;
-}
-
-/* Titres et carrousels */
-#carouselIdIvan,
-#carouselIdInene {
-  display: block;
-  margin: 0 auto; /* centre le carousel */
-  width: 500px;
-  max-width: 100%;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  margin-top: 0 auto;
-}
-
-#carouselIdIvan + h3,
-#carouselIdInene + h3 {
   text-align: center;
+}
+
+/* Titre h2 — même style que les autres */
+.project-gallery h2 {
+  width: 100%;
+  text-align: left;
+  font-size: 2rem;
+  color: #06d6a0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-left: 5px solid #06d6a0;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+
+/* Texte centré sous le titre */
+.project-gallery p,
+.project-gallery small {
+  width: 100%;
+  max-width: none;       /* annule le max-width de section p */
+  text-align: center;
+  margin: 0 auto;        /* centre horizontalement si plusieurs lignes */
+  color: #f8f9fa;
+}
+
+.project-gallery small {
+  display: block;
+  margin-bottom: 20px; /* espace avant les carrousels */
 }
 
 /* Titres Ivan / Inene */
 .project-gallery h3 {
-  font-size: 1.8rem;
-  color: #4fc744;
-  margin: 0 0 15px;
+  width: 100%;         /* prend toute la largeur pour ne pas casser la ligne */
+  text-align: center;  /* centre le texte */
+  font-size: 1.6rem;
+  color: #58e74b;
+  margin: 10px 0 10px;
   text-transform: uppercase;
-  margin-top: 20px;
   letter-spacing: 1px;
-  padding-bottom: 5px;
-  text-align: center; /* centre les prénoms */
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Carrousels côte à côte */
+.project-gallery #carouselIdIvan,
+.project-gallery #carouselIdInene {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;          /* deux carrousels côte à côte */
+  max-width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  margin: 0 2.5%;
 }
 
 /* Images du carousel */
 .carousel-item img {
   object-fit: cover;
-  height: 320px;
+  height: 370px;
   width: 100%;
   display: block;
   border-radius: 15px;
 }
 
+/*----------------SECTION FOOTER -----------------------*/
+footer {
+  text-align: center;      /* centre tout le contenu texte et icônes */
+  padding: 6px 0;         /* un peu d’espace vertical */
+  background: rgba(0, 0, 0, 0.436); /* optionnel : fond semi-transparent */
+  color: #fff;            /* couleur du texte */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.08em;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;     
+  gap: 10px;               
+}
+
+
+/* Responsive : empilement sur mobile */
+@media (max-width: 900px) {
+  .project-gallery #carouselIdIvan,
+  .project-gallery #carouselIdInene {
+    width: 90%;
+    display: block;
+    margin: 0 auto 30px;
+  }
+}
